@@ -8,10 +8,9 @@ namespace guess_the_number
         {
             bool gameover = false;
 
+            // Create a random number beween 0-10, inclusive.
             Random rand = new Random();
             int randomNumber = rand.Next(0, 10);
-            Console.WriteLine(randomNumber);
-
 
             Console.WriteLine("Guess the Number Game");
             Console.WriteLine("=====================");
@@ -20,19 +19,19 @@ namespace guess_the_number
 
             while (!gameover)
             {
-                string guess = Console.ReadLine();
-                int convertedGuess = Convert.ToInt32(guess);
+                string input = Console.ReadLine();
+                int guess = Convert.ToInt32(input);
 
-                if (convertedGuess == randomNumber)
+                if (guess == randomNumber)
                 {
                     Console.WriteLine("You guessed correctly!");
                     gameover = true;
                 }
-                else if (convertedGuess > randomNumber)
+                else if (guess > randomNumber)
                 {
                     Console.WriteLine("Your guess is too high. Try again");
                 }
-                else if (convertedGuess < randomNumber)
+                else if (guess < randomNumber)
                 {
                     Console.WriteLine("Your guess is too low. Try again");
                 }
